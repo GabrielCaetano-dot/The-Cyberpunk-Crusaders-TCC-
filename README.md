@@ -1,7 +1,7 @@
 # The-Cyberpunk-Crusaders-TCC-
 Projeto de conclusão de curso técnico em Programação de Jogos Digitais (2023).
 
-**ferramenteas:**
+**Ferramenteas:**
 Godot (3.6.2), Blender, Photoshop, Illustrator e Canva.
 
 Ao revisitar meu primeiro projeto, agora, com um olhar mais técnico percebo vários pontos importante de evolução:
