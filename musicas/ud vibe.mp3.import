@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ud vibe.mp3-1479723477e6c743b667a9d4abc0300b.mp3str"
+
+[deps]
+
+source_file="res://musicas/ud vibe.mp3"
+dest_files=[ "res://.import/ud vibe.mp3-1479723477e6c743b667a9d4abc0300b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

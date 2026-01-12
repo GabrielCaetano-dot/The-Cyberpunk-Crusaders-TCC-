@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://codes/boss.gd" type="Script" id=1]
+[ext_resource path="res://codes/Tempo.gd" type="Script" id=2]
+[ext_resource path="res://codes/dano.gd" type="Script" id=3]
+[ext_resource path="res://codes/skill.gd" type="Script" id=4]
+[ext_resource path="res://anima/Sicarius.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape" id=4]
+
+[sub_resource type="CapsuleShape" id=5]
+
+[sub_resource type="SphereShape" id=6]
+
+[node name="boss" type="KinematicBody" groups=["inimigo"]]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.217957, 0 )
+collision_layer = 4
+collision_mask = 8
+script = ExtResource( 1 )
+
+[node name="Sicarius" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.25, 0, -0.5, 0, -2.18557e-08, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.62799, 0 )
+shape = SubResource( 4 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="."]
+
+[node name="Invisible" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Invislbilidade" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+
+[node name="dano" type="Area" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="dano"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.57657, 0 )
+shape = SubResource( 5 )
+
+[node name="Tempo" type="Area" parent="."]
+transform = Transform( 9, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+collision_layer = 4
+collision_mask = 4
+script = ExtResource( 2 )
+
+[node name="skill" type="CollisionShape" parent="Tempo"]
+shape = SubResource( 6 )
+disabled = true
+script = ExtResource( 4 )
+
+[node name="eixo" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195364, 1.64659, -2.94991e-08 )
+
+[node name="mira" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44413, 0 )
+
+[connection signal="timeout" from="Invisible" to="." method="_on_Invisible_timeout"]
+[connection signal="timeout" from="Invislbilidade" to="." method="_on_Invislbilidade_timeout"]
+[connection signal="body_entered" from="dano" to="." method="_on_dano_body_entered"]
+[connection signal="body_entered" from="Tempo" to="." method="_on_Tempo_body_entered"]

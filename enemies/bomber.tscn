@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://codes/bomber.gd" type="Script" id=1]
+[ext_resource path="res://obj/missel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://mod e ani/Bomber.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+height = 1.52095
+
+[sub_resource type="SphereShape" id=4]
+
+[node name="bomber" type="KinematicBody"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+collision_layer = 4
+collision_mask = 8
+script = ExtResource( 1 )
+projetil = ExtResource( 2 )
+
+[node name="Bomber" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.82359, 0 )
+shape = SubResource( 1 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="."]
+
+[node name="Missel" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="Destroy" type="Area" parent="."]
+collision_layer = 4
+
+[node name="destroy" type="CollisionShape" parent="Destroy"]
+transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="mira" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28693, 1 )
+
+[node name="spawn" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.805288, 0 )
+
+[node name="eixo" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67786, 0.0505257 )
+
+[node name="boom" type="Timer" parent="."]
+
+[connection signal="timeout" from="Missel" to="." method="_on_Missel_timeout"]
+[connection signal="body_entered" from="Destroy" to="." method="_on_Destroy_body_entered"]
+[connection signal="timeout" from="boom" to="." method="_on_boom_timeout"]
