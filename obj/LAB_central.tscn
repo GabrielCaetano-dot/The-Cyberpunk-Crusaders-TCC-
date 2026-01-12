@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://modelos/LAB_central.glb" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.091156, 0.0999032, 0.113281, 1 )
+
+[node name="LAB_central" instance=ExtResource( 1 )]
+transform = Transform( -0.999992, 0, 0.00408401, 0, 1, 0, -0.00408401, 0, -0.999992, 0, 0, 0 )
+
+[node name="floor_base_07_003003" parent="." index="30"]
+material/0 = SubResource( 1 )
+
+[node name="floor_base_07_003005" parent="." index="31"]
+material/0 = SubResource( 1 )
+
+[node name="floor_base_07_003006" parent="." index="32"]
+material/0 = SubResource( 1 )
+
+[node name="nakladka001" parent="." index="37"]
+transform = Transform( 0.0386694, 0, 0, 0, 0.0386694, 0, 0, 0, 0.0386694, -9.54011, -24.0468, -13.548 )
+
+[node name="nakladka002" parent="." index="39"]
+transform = Transform( 0.0386694, 0, 0, 0, 0.0386694, 0, 0, 0, 0.0386694, -10.9034, -24.0468, -13.548 )
+
+[node name="nakladka003" parent="." index="40"]
+transform = Transform( 0.0386694, 0, 0, 0, 0.0386694, 0, 0, 0, 0.0386694, -10.9034, -5.91584, -13.548 )
+
+[node name="stoika_008" parent="." index="53"]
+transform = Transform( 0.0386694, 0, 0, 0, 0.0386694, 0, 0, 0, 0.0386694, -10.9034, -24.0468, -13.548 )
+
+[node name="stoika_03001" parent="." index="57"]
+transform = Transform( 0.0386694, 0, 0, 0, 0.0386694, 0, 0, 0, 0.0386694, -9.54011, -28.3235, -13.548 )
