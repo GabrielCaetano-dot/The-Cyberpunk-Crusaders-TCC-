@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://codes/main menu.gd" type="Script" id=1]
+[ext_resource path="res://menus/MenuPause.png" type="Texture" id=2]
+[ext_resource path="res://menus/ControlsPause.png" type="Texture" id=3]
+[ext_resource path="res://menus/AudioPause.png" type="Texture" id=4]
+[ext_resource path="res://menus/ReturnPause.png" type="Texture" id=5]
+[ext_resource path="res://menus/SelectPause.png" type="Texture" id=6]
+[ext_resource path="res://menus/DifficultyPause.png" type="Texture" id=7]
+[ext_resource path="res://menus/menu.gd" type="Script" id=8]
+[ext_resource path="res://menus/InstructionPause.png" type="Texture" id=9]
+[ext_resource path="res://menus/OptionsPause.png" type="Texture" id=10]
+
+[sub_resource type="Theme" id=1]
+
+[node name="menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1030.0
+margin_bottom = 601.0
+color = Color( 0.870588, 0.698039, 0.886275, 0.321569 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.261719
+anchor_top = -0.0166667
+anchor_right = 0.76734
+anchor_bottom = 0.206862
+margin_right = 1228.24
+margin_bottom = 108.883
+rect_scale = Vector2( 0.296538, 0.551922 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="select" type="TextureButton" parent="."]
+anchor_left = 0.314453
+anchor_top = 0.22625
+anchor_right = 0.723145
+anchor_bottom = 0.35625
+margin_right = 976.5
+margin_bottom = 117.0
+rect_scale = Vector2( 0.3, 0.4 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="difficult" type="TextureButton" parent="."]
+anchor_left = 0.336914
+anchor_top = 0.332917
+anchor_right = 0.704297
+anchor_bottom = 0.464917
+margin_right = 877.8
+margin_bottom = 118.8
+rect_scale = Vector2( 0.3, 0.4 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="instruction" type="TextureButton" parent="."]
+anchor_left = 0.355469
+anchor_top = 0.447917
+anchor_right = 0.686816
+anchor_bottom = 0.569917
+margin_right = 791.7
+margin_bottom = 109.8
+rect_scale = Vector2( 0.3, 0.4 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="audio" type="TextureButton" parent="."]
+anchor_left = 0.365234
+anchor_top = 0.549583
+anchor_right = 0.684277
+anchor_bottom = 0.679583
+margin_right = 762.3
+margin_bottom = 117.0
+rect_scale = Vector2( 0.3, 0.4 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="options" type="TextureButton" parent="."]
+anchor_left = 0.358398
+anchor_top = 0.657917
+anchor_right = 0.688867
+anchor_bottom = 0.783917
+margin_right = 789.6
+margin_bottom = 113.4
+rect_scale = Vector2( 0.3, 0.4 )
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="controls" type="TextureButton" parent="."]
+anchor_left = 0.342773
+anchor_top = 0.768333
+anchor_right = 0.704883
+anchor_bottom = 0.898333
+margin_right = 865.2
+margin_bottom = 117.0
+rect_scale = Vector2( 0.301272, 0.426442 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="main menu" type="TextureButton" parent="."]
+anchor_left = 0.320313
+anchor_top = 0.875
+anchor_right = 0.720215
+anchor_bottom = 1.009
+margin_right = 955.5
+margin_bottom = 120.6
+rect_scale = Vector2( 0.3, 0.439551 )
+texture_normal = ExtResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="main menu" to="." method="_on_main_menu_pressed"]

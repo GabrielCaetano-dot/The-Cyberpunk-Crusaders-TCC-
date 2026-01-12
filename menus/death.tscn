@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://codes/death.gd" type="Script" id=1]
+[ext_resource path="res://menus/TelaDeGameOver 09092023.png" type="Texture" id=2]
+[ext_resource path="res://modeloar/restart.png" type="Texture" id=3]
+[ext_resource path="res://menus/GameOverMenu.png" type="Texture" id=4]
+
+[sub_resource type="Theme" id=1]
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="TelaDeGameOvermod" type="Sprite" parent="."]
+position = Vector2( 514, 303 )
+scale = Vector2( 0.539153, 0.422018 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="restart" type="TextureButton" parent="."]
+margin_left = 316.0
+margin_top = 424.0
+margin_right = 1023.0
+margin_bottom = 540.0
+rect_scale = Vector2( 0.590087, 0.513041 )
+texture_normal = ExtResource( 3 )
+
+[node name="return" type="TextureButton" parent="."]
+margin_left = 345.0
+margin_top = 477.0
+margin_right = 1005.0
+margin_bottom = 576.0
+rect_scale = Vector2( 0.59, 0.513 )
+texture_normal = ExtResource( 4 )
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]

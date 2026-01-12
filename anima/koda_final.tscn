@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="koda_final"]
+
+[node name="BoneAttachment" parent="Armature/Skeleton" index="0"]
+transform = Transform( 0.299403, -0.388989, 0.871232, 0.0657633, 0.919362, 0.387878, -0.951858, -0.0588364, 0.300841, -0.995935, 3.48191, -6.6599 )

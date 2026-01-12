@@ -1,0 +1,132 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://codes/home.gd" type="Script" id=1]
+[ext_resource path="res://menus/Options.png" type="Texture" id=2]
+[ext_resource path="res://menus/Exit.png" type="Texture" id=3]
+[ext_resource path="res://menus/Cidade-Paisagem.png" type="Texture" id=4]
+[ext_resource path="res://menus/Continue.png" type="Texture" id=5]
+[ext_resource path="res://menus/NewGame.png" type="Texture" id=6]
+[ext_resource path="res://menus/Language.png" type="Texture" id=7]
+[ext_resource path="res://menus/MenuPrincipalletras.png" type="Texture" id=8]
+[ext_resource path="res://musicas/the exception.mp3" type="AudioStream" id=9]
+[ext_resource path="res://menus/cibescrista.png" type="Texture" id=10]
+
+[node name="home" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="fundo" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 866.0
+margin_bottom = 817.0
+rect_scale = Vector2( 0.542204, 0.425836 )
+texture = ExtResource( 4 )
+
+[node name="letras2" type="TextureRect" parent="."]
+anchor_left = 0.275391
+anchor_top = -0.18837
+anchor_right = 0.353495
+anchor_bottom = -0.18837
+margin_left = 14.0
+margin_top = 182.0
+margin_right = 1060.02
+margin_bottom = 880.022
+rect_scale = Vector2( 0.458893, 0.502822 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="letras" type="TextureRect" parent="."]
+anchor_left = 0.108398
+anchor_top = -0.0233333
+anchor_right = 0.932597
+anchor_bottom = 1.17497
+margin_left = 8.99997
+margin_right = 1055.02
+margin_bottom = 698.022
+rect_scale = Vector2( 0.44655, 0.507395 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="new game" type="TextureButton" parent="."]
+anchor_left = 0.389648
+anchor_top = 0.501667
+anchor_right = 0.638516
+anchor_bottom = 0.601417
+margin_left = 8.99997
+margin_right = 308.16
+margin_bottom = 35.15
+rect_scale = Vector2( 0.46, 0.63 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="continue" type="TextureButton" parent="."]
+anchor_left = 0.389648
+anchor_top = 0.595
+anchor_right = 0.639414
+anchor_bottom = 0.69685
+margin_left = 8.99997
+margin_right = 309.24
+margin_bottom = 35.89
+rect_scale = Vector2( 0.46, 0.63 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="options" type="TextureButton" parent="."]
+anchor_left = 0.390625
+anchor_top = 0.691667
+anchor_right = 0.639492
+anchor_bottom = 0.791417
+margin_left = 8.99997
+margin_right = 308.16
+margin_bottom = 35.15
+rect_scale = Vector2( 0.46, 0.63 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="language" type="TextureButton" parent="."]
+anchor_left = 0.391602
+anchor_top = 0.786667
+anchor_right = 0.63957
+anchor_bottom = 0.883267
+margin_left = 8.99997
+margin_right = 423.378
+margin_bottom = 83.6924
+rect_scale = Vector2( 0.46, 0.63 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="exit" type="TextureButton" parent="."]
+anchor_left = 0.391602
+anchor_top = 0.88
+anchor_right = 0.640918
+anchor_bottom = 0.9703
+margin_left = 8.99997
+margin_right = 308.7
+margin_bottom = 31.82
+rect_scale = Vector2( 0.46, 0.63 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+
+[connection signal="pressed" from="new game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
