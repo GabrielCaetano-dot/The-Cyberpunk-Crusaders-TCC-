@@ -1,8 +1,11 @@
 # The-Cyberpunk-Crusaders-TCC-
 Projeto de conclusão de curso técnico em Programação de Jogos Digitais (2023).
 
-Desenvolvido através do Godot em sua versão estável (3.6.2), com modelos 3Ds feitos no Blender, artes feitas pelo Photoshop, Illustrator e Canva e músicas feitas pelo FL Studio.
+**ferramenteas:**
+Godot (3.6.2), Blender, Photoshop, Illustrator e Canva.
 
-Neste meu primeiro grande projeto, realizado em grupo, fui o responsável pela programação e algumas artes do jogo. Vendo este projeto dois anos depois de sua finalização com um olhar mais crítico, percebo vários bugs relacionados as animações do personagem principal e alguns erros na programação, como: redundâncias, variáveis com funções não claras e muitas 'gambiarras'. 
+Ao revisitar meu primeiro projeto, agora, com um olhar mais técnico percebo vários pontos importante de evolução:
+- Refatoração: Analisando o código é possível identificar várias redundância e variaveis que não seguem uma nomenclatura prática, trazendo problemas para a compreensão do código.
+- Bugs de animação: Ao rodar o jogo é possível notar que algumas animações não obedecem uma certa hierarquia de ações, além de muitas não estarem muito bem sincronizadas.
 
-PS: não foi possível trazer todos os arquivos do jogo por limite de espaço.
+**Nota**: Devido ao limite imposto pelo github, não foi possível implementar todos os arquivos do jogo.
